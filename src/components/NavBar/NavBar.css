@@ -1,6 +1,7 @@
 .header{
     padding: 10px 0px;
-    background: var(--veryDarkBlue);
+    /* background: var(--veryDarkBlue); */
+    background: white;
 }
 .header .container{
     display: flex;
@@ -8,9 +9,9 @@
     align-items: center;
 }
 .header .logo .logo-text{
-    font-weight: 700;
+    font-weight: 900;
     color: var(--orange);
-    font-size: 25px;
+    font-size: 30px;
 }
 .main-menu{
     display: flex;
@@ -20,5 +21,9 @@
 .main-menu li a{
     display: inline-block;
     padding: 8px 14px;
-    color: white;
+    color: black;
+    font-size: 18px;
+}
+.main-menu li:hover a {
+    color: var(--orange);
 }
