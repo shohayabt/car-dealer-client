@@ -1,0 +1,28 @@
+.about-information{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-bottom: 60px;
+}
+.about-image{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.about-image img{
+    width: 80%;
+}
+.about-information .information>h3{
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 90px;
+}
+.about-information .information>h3>span{
+    color: var(--orange);
+}
+.about-information .information>p {
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 35px;
+}

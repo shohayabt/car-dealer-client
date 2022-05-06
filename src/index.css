@@ -60,5 +60,12 @@ d-flex-col{
     color: white;
     text-transform: uppercase;
     cursor: pointer;
+    border-radius: 5px;
+}
+.title{
+    text-align: center;
+    line-height: 120px;
+    font-size: 35px;
+    font-weight: 700;
 }
 /* COMMON CLASSES END HERE  */
