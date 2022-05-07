@@ -10,9 +10,6 @@ const About = () => {
           <h1 className="title">ABOUT US</h1>
         </div>
         <div className="about-information">
-          <div className="about-image">
-            <img src={image} alt="" />
-          </div>
           <div className="information">
             <h3>
               welcome to <span>car dealer</span>
@@ -25,6 +22,9 @@ const About = () => {
               around the globe, deliver operational excellence
             </p>
             <button className="btn">read more</button>
+          </div>
+          <div className="about-image">
+            <img src={image} alt="" />
           </div>
         </div>
       </div>

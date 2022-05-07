@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     margin-bottom: 60px;
+    grid-column-gap: 20px;
 }
 .about-image{
 display: flex;
@@ -9,10 +10,10 @@ justify-content: center;
 align-items: center;
 }
 .about-image img{
-    width: 80%;
+    width: 95%;
 }
 .about-information .information>h3{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
     text-transform: uppercase;
     line-height: 90px;
