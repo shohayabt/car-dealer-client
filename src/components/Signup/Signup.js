@@ -73,7 +73,12 @@ const Signup = () => {
               Signup
             </button>
             <div className="button-area">
-              <button className="btn google-signup"> Signup with goolge</button>
+              <button
+                className="btn google-signup"
+                onClick={() => signInWithGoogle()}
+              >
+                Signup with goolge
+              </button>
             </div>
           </form>
         </div>

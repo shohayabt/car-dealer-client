@@ -55,6 +55,9 @@ const Login = () => {
               <Link to="/signup" className="toggle-button btn">
                 create new account
               </Link>
+              <button className="btn login-button " type="submit">
+                Login
+              </button>
               <Link to="/reset-password" className="toggle-button btn">
                 reset password
               </Link>

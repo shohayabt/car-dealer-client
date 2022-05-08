@@ -24,3 +24,6 @@
 #signup > .container > .signup-section > .signup-control input {
   width: 100%;
 }
+.signout {
+  margin-top: 0px;
+}
