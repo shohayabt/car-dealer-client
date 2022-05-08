@@ -7,9 +7,9 @@ const NavBar = () => {
     <div className="header">
       <header className="container">
         <div className="logo">
-          <a href="#" className="logo-text">
+          <Link to="/" className="logo-text">
             CAR <span>DEALER</span>
-          </a>
+          </Link>
         </div>
         <nav className="nav-section">
           <ul className="main-menu">

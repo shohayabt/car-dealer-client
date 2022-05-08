@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
@@ -8,15 +9,27 @@ const Login = () => {
         <div className="login-section">
           <form className="login-control">
             <div className="input-area">
+              <label htmlFor="email"> Email:</label>
               <input type="email" required placeholder="Eamil Address" />
             </div>
             <div className="input-area">
+              <label htmlFor="password"> Password:</label>
               <input type="password" required placeholder="Password" />
             </div>
-            <div className="button-area">
-              <button type="submit" className="btn">
+            <div className="toggle-area">
+              <Link to="/signup" className="toggle-button btn">
+                create new account
+              </Link>
+              <button type="submit" className="btn login-button">
                 Login
               </button>
+              <Link to="/reset-password" className="toggle-button btn">
+                reset password
+              </Link>
+            </div>
+            <p className="or">or</p>
+            <div className="button-area">
+              <button className="btn google-button">LOGIN WITH GOOGLE</button>
             </div>
           </form>
         </div>
