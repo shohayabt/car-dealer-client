@@ -1,0 +1,15 @@
+.add-product > .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0px;
+}
+.add-product > .container > .form-control {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.add-product > .container > .form-control > input {
+}
