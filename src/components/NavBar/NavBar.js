@@ -23,7 +23,13 @@ const NavBar = () => {
             <li>
               <Link to="/">HOME</Link>
             </li>
-            <li>{user ? user.displayName : <Link to="/login">LOGIN</Link>}</li>
+            <li>
+              {user ? (
+                user?.displayName || user?.email
+              ) : (
+                <Link to="/login">LOGIN</Link>
+              )}
+            </li>
             <li>
               {user ? (
                 <button className="btn signout" onClick={logout}>
