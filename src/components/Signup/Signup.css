@@ -1,0 +1,26 @@
+.google-signup {
+  background: black;
+}
+
+#signup > .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#signup > .container > .signup-section {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#signup > .container > .signup-section > .signup-control {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#signup > .container > .signup-section > .signup-control input {
+  width: 100%;
+}

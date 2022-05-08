@@ -20,9 +20,6 @@ const Login = () => {
               <Link to="/signup" className="toggle-button btn">
                 create new account
               </Link>
-              <button type="submit" className="btn login-button">
-                Login
-              </button>
               <Link to="/reset-password" className="toggle-button btn">
                 reset password
               </Link>
