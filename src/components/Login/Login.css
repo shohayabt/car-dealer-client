@@ -1,0 +1,19 @@
+#login > .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login > .container > .login-section {
+  width: 80%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login > .container > .login-section > .login-control {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

@@ -9,10 +9,10 @@ const Subscribe = () => {
           <h1>
             Subscribe to our newsleter <span>!</span>
           </h1>
-          <p>
+          {/* <p>
             we will sent you the bes of our blog just once a month.
             <span>we promise!</span>
-          </p>
+          </p> */}
           <div className="input-area">
             <input type="email" required placeholder="Email address" />
           </div>
