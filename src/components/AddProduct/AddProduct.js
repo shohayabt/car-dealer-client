@@ -8,17 +8,51 @@ const AddProduct = () => {
   return (
     <section className="add-product">
       <div className="container">
-        <form className="form-control">
+        <form
+          className="form-control"
+          onSubmit={(e) => {
+            e.preventDefault();
+            const email = user.email;
+            const name = e.target.name.value;
+            const price = e.target.price.value;
+            const quantity = e.target.quantity.value;
+            const suplierName = user.displayName || user.email;
+            const imageUrl = e.target.imageUrl.value;
+            const description = e.target.description.value;
+            const product = {
+              email,
+              name,
+              price,
+              quantity,
+              suplierName,
+              imageUrl,
+              description,
+            };
+            const url = `http://localhost:5000/cars`;
+            fetch(url, {
+              method: "POST",
+              body: JSON.stringify({ product }),
+              headers: {
+                "Content-type": "application/json; charset=UTF-8",
+              },
+            })
+              .then((response) => response.json())
+              .then((data) => alert(data));
+            e.target.reset();
+          }}
+        >
+          <h1>ADD PRODUCT</h1>
           <div className="input-area">
             <input
               type="email"
               value={user.email}
-              name=" email"
+              disabled
+              name="email"
               placeholder="Email"
             />
           </div>
           <div className="input-area">
-            <input type="text" name=" name" placeholder="Name" />
+            <input type="text" name="name" placeholder="Name" />
           </div>
           <div className="input-area">
             <input type="number" name="price" placeholder="Price" />
@@ -29,13 +63,14 @@ const AddProduct = () => {
           <div className="input-area">
             <input
               type="text"
-              name="suplier name"
+              name="suplierName"
               value={user.displayName}
+              disabled
               placeholder="Suplier Name"
             />
           </div>
           <div className="input-area">
-            <input type="text" name="Image Url" placeholder="Image Url" />
+            <input type="text" name="imageUrl" placeholder="Image Url" />
           </div>
           <div className="input-area">
             <input
@@ -45,7 +80,9 @@ const AddProduct = () => {
             ></input>
           </div>
           <div className="button-area">
-            <button className="btn">ADD PRODUCT</button>
+            <button className="btn" type="submit">
+              ADD PRODUCT
+            </button>
           </div>
         </form>
       </div>

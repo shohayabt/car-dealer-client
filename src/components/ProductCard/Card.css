@@ -1,0 +1,7 @@
+.card-action{
+    display: flex;
+    justify-content: space-between;
+}
+.price{
+    color: var(--orange);
+}
