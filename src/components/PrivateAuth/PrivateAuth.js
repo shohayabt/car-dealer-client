@@ -7,7 +7,7 @@ const PrivateAuth = ({ children }) => {
   const [user, loading] = useAuthState(auth);
   const location = useLocation();
   if (loading) {
-    <p>HELLO FROM PRIVATE AUTH</p>;
+    return <p>HELLO FROM PRIVATE AUTH</p>;
   }
 
   if (!user) {

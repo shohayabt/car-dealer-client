@@ -21,17 +21,17 @@ li {
   width: 90%;
   margin: 0 auto;
 }
-d-flex-c {
+.d-flex-c {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-d-flex-b {
+.d-flex-b {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-d-flex-col {
+.d-flex-col {
   display: flex;
   align-items: center;
   justify-content: center;

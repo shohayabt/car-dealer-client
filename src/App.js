@@ -25,6 +25,14 @@ function App() {
             </PrivateAuth>
           }
         ></Route>
+        <Route
+          path="management"
+          element={
+            <PrivateAuth>
+              <Management />
+            </PrivateAuth>
+          }
+        ></Route>
       </Routes>
       <Footer />
     </div>
