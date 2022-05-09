@@ -11,12 +11,11 @@ const Hero = () => {
             <span>I'm</span> Truly Happy You're Here.
           </h1>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo
-            quisquam aliquam commodi ad sit qui sint officiis eius, numquam a ea
-            harum hic ratione temporibus consectetur dolorem, non ipsam
-            laudantium! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Aspernatur a maiores odio libero id quidem. Dolores at vitae quae
-            laborum!
+            The car dealer assists customers who are looking to purchase a new
+            or used vehicle. They converse with customers to find out their
+            budget and wish list, helping them find a suitable car that matches
+            their needs. In addition to selling cars, the car salesperson orders
+            and arranges payments with the shipper.
           </p>
           <button className="btn">Explore more</button>
         </div>
