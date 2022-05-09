@@ -1,0 +1,8 @@
+.updateProduct .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.updateProduct .container .productInformation{
+    
+}

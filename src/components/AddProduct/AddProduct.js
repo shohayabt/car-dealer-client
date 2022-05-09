@@ -31,7 +31,7 @@ const AddProduct = () => {
             const url = `http://localhost:5000/cars`;
             fetch(url, {
               method: "POST",
-              body: JSON.stringify({ product }),
+              body: JSON.stringify(product),
               headers: {
                 "Content-type": "application/json; charset=UTF-8",
               },

@@ -6,6 +6,7 @@ import Login from "./components/Login/Login";
 import NavBar from "./components/NavBar/NavBar";
 import PrivateAuth from "./components/PrivateAuth/PrivateAuth";
 import Signup from "./components/Signup/Signup";
+import UpdateProduct from "./components/UpdateProduct/UpdateProduct";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
+        <Route path="/car/:id" element={<UpdateProduct />}></Route>
         <Route
           path="addProduct"
           element={

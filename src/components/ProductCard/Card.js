@@ -9,14 +9,12 @@ import "./Card.css";
 import { useNavigate } from "react-router-dom";
 
 export const MediaCard = (props) => {
-  console.log(props.product.product);
-  const { name, imageUrl, description, price, quantuty, suplierName } =
-    props.product.product;
-  // const navigate = useNavigate();
-
-  // const navigateToServiceDetail = (product) => {
-  //   navigate(`/service/${prosuct.name}`);
-  // };
+  const { name, imageUrl, description, price, quantity, suplierName, _id } =
+    props.product;
+  const navigate = useNavigate();
+  const navigateToProductUpdate = (id) => {
+    navigate(`/car/${id}`);
+  };
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -31,17 +29,25 @@ export const MediaCard = (props) => {
         <Typography gutterBottom variant="h5" component="div">
           {name}
         </Typography>
+        <Typography gutterBottom variant="body" component="div">
+          Suplier Name: {suplierName}
+        </Typography>
+        <Typography gutterBottom variant="body" component="div">
+          Quantity:{quantity}
+        </Typography>
         <Typography variant="body2" color="text.secondary">
           {description.slice(0, 150)}
         </Typography>
       </CardContent>
       <CardActions className="card-action">
-        <span className="price">{price}$</span>
+        <span className="price">{price}TK</span>
         <Button
           size="small"
-          // onClick={() => navigateToServiceDetail(props.service)}
+          onClick={() => {
+            navigateToProductUpdate(_id);
+          }}
         >
-          Get Booking
+          UPDATE PRODUCT
         </Button>
       </CardActions>
     </Card>
