@@ -1,12 +1,24 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 import auth from "../../firebase";
 import "./AddProduct.css";
 
 const AddProduct = () => {
   const [user, loading, error] = useAuthState(auth);
+  let navigate = useNavigate();
   return (
     <section className="add-product">
+      <div className="button-area d-flex-c">
+        <button
+          className="btn"
+          onClick={() => {
+            navigate("/management");
+          }}
+        >
+          PRODUCT MANAGEMENT
+        </button>
+      </div>
       <div className="container">
         <form
           className="form-control"
