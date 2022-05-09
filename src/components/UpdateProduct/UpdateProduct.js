@@ -9,12 +9,64 @@ const UpdateProduct = () => {
 
   const { name, imageUrl, description, price, quantity, suplierName, _id } =
     car;
-  console.log(id);
+
   useEffect(() => {
     fetch(`http://localhost:5000/car/${id}`)
       .then((res) => res.json())
       .then((data) => setCar(data));
   });
+
+  // ADD STOCK
+  const handleUpdate = (event) => {
+    event.preventDefault();
+    const restockQuantity = event.target.restock.value;
+    const updatedRestock =
+      parseInt(productQuantity) + parseInt(restockQuantity);
+    const updatedProductQuantity = updatedRestock.toString();
+    const updateQuantity = { updatedProductQuantity };
+
+    //update data
+    const url = `http://localhost:5000/products/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateQuantity),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
+  //handle stock add
+  const productQuantity = quantity;
+
+  // HANDLEDELIVERED
+  const handleDelivered = () => {
+    let quantity = 0;
+    if (productQuantity > 0) {
+      quantity = parseInt(productQuantity) - 1;
+    }
+
+    const updatedProductQuantity = quantity.toString();
+    const updateQuantity = { updatedProductQuantity };
+
+    //update data
+    const url = `http://localhost:5000/products/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateQuantity),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
   return (
     <section className="updateProduct">
       <div className="button-area d-flex-c">
@@ -27,7 +79,9 @@ const UpdateProduct = () => {
           </div>
           <div className="name d-flex-b">
             <h2 className="name">{name}</h2>
-            <h2 className="name">TOTAL:{quantity}</h2>
+            <h2 className="name">
+              {quantity > 0 ? `TOTAL: ${quantity}` : "SOLD OUT"}
+            </h2>
           </div>
           <div className="about">
             <p>{description}</p>
@@ -37,14 +91,18 @@ const UpdateProduct = () => {
             <h2 className="name">{suplierName}</h2>
           </div>
           <div className="button-area d-flex-c">
-            <button className="btn">DELIVERED</button>
+            <button className="btn" onClick={handleDelivered}>
+              DELIVERED
+            </button>
           </div>
 
-          <form className="d-flex-c">
+          <form className="d-flex-c" onSubmit={handleUpdate}>
             <div className="input-area d-flex-col">
-              <input type="number" required />
+              <input type="number" required name="restock" />
               <div className="button-area">
-                <button className="btn">UPDATE STOCK</button>
+                <button className="btn " type="submit">
+                  UPDATE STOCK
+                </button>
               </div>
             </div>
           </form>

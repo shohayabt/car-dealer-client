@@ -3,6 +3,7 @@ import AddProduct from "./components/AddProduct/AddProduct";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
+import Management from "./components/Management/Management";
 import NavBar from "./components/NavBar/NavBar";
 import PrivateAuth from "./components/PrivateAuth/PrivateAuth";
 import Signup from "./components/Signup/Signup";
