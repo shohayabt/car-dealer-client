@@ -1,10 +1,11 @@
 .footer {
   background: var(--veryDarkBlue);
+  border-bottom: 2px solid var(--orange);
 }
 .footer > .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 10px;
+  grid-gap: 10px 15px;
   padding: 40px 0px;
   color: white;
 }
@@ -33,4 +34,32 @@
 }
 .post-text > h4 {
   color: skyblue;
+}
+.image-map {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px 10px;
+}
+.image-map > .single-image {
+  width: 100%;
+}
+.image-map > .single-image img {
+  width: 100%;
+}
+
+.information-area {
+  display: grid;
+  grid-template-columns: 1fr 12fr;
+  grid-gap: 30px 10px;
+}
+.information-area > .mail,
+.information-area .icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.footer-text {
+  background: var(--veryDarkBlue);
+  color: var(--orange);
+  padding: 20px 0px;
 }

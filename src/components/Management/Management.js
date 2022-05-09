@@ -3,6 +3,7 @@ import "./Management.css";
 import { useEffect, useState } from "react";
 import "../Products/Product.css";
 import { DeleteCard } from "../DeleteCard/DeleteCard";
+import { useNavigate } from "react-router-dom";
 
 export const Management = () => {
   const [products, setProducts] = useState([]);
@@ -18,9 +19,19 @@ export const Management = () => {
       method: "DELETE",
     });
   };
-
+  let navigate = useNavigate();
   return (
-    <>
+    <section>
+      <div className="button-area d-flex-c">
+        <button
+          className="btn"
+          onClick={() => {
+            navigate(`/addProduct`);
+          }}
+        >
+          ADD PRODUCTS
+        </button>
+      </div>
       <div className="container product">
         <h2 className="title">PRODUCT</h2>
         <div className="card-container">
@@ -33,6 +44,6 @@ export const Management = () => {
           ))}
         </div>
       </div>
-    </>
+    </section>
   );
 };
