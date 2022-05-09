@@ -1,38 +1,44 @@
 import React from "react";
-import { signOut } from "firebase/auth";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
 import "./NavBar.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase";
-
-const NavBar = () => {
+import { signOut } from "firebase/auth";
+export const NavBar = () => {
   const [user, loading, error] = useAuthState(auth);
-  const logout = () => {
-    signOut(auth);
+
+  const [navbar, setnavbar] = useState(false);
+  const responsiveToggle = (e) => {
+    if (navbar) {
+      setnavbar(false);
+    } else {
+      setnavbar(true);
+    }
   };
+
   return (
-    <div className="header">
-      <header className="container">
+    <header className="header-section">
+      <div className="container d-flex-b">
         <div className="logo">
-          <Link to="/" className="logo-text">
+          <Link to="/">
             CAR <span>DEALER</span>
           </Link>
         </div>
-        <nav className="nav-section">
-          <ul className="main-menu">
+        <nav className={!navbar ? "main-menu" : "show"}>
+          <ul>
             <li>
               <Link to="/">HOME</Link>
             </li>
             <li>
-              {user ? (
-                user?.displayName || user?.email
-              ) : (
-                <Link to="/login">LOGIN</Link>
-              )}
+              <Link to="/blog">BLOG</Link>
             </li>
+            <li>{!user ? <></> : <Link to="/addProduct">ADD PRODUCT</Link>}</li>
+            <li>{!user ? <></> : <Link to="/management">MANAGEMENT</Link>}</li>
+            <li>{user ? <></> : <Link to="/login">LOGIN</Link>}</li>
             <li>
               {user ? (
-                <button className="btn signout" onClick={logout}>
+                <button className="btn signout" onClick={() => signOut(auth)}>
                   SIGN OUT
                 </button>
               ) : (
@@ -41,9 +47,40 @@ const NavBar = () => {
             </li>
           </ul>
         </nav>
-      </header>
-    </div>
+        <div className="menuToggleBar" onClick={responsiveToggle}>
+          {!navbar ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          )}
+        </div>
+      </div>
+    </header>
   );
 };
-
-export default NavBar;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./UpdateProduct.css";
 
 const UpdateProduct = () => {
@@ -69,9 +69,7 @@ const UpdateProduct = () => {
   };
   return (
     <section className="updateProduct">
-      <div className="button-area d-flex-c">
-        <button className="btn">MANAGE INVENTORY</button>
-      </div>
+      <div className="button-area d-flex-c"></div>
       <div className="container">
         <div className="productInformation">
           <div className="image">
