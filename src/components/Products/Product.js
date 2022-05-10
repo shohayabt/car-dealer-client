@@ -6,7 +6,7 @@ import "./Product.css";
 export const Product = () => {
   const [products, setProducts] = useState([]);
 
-  const car = products.slice(0, 5);
+  const car = products.slice(0, 6);
   useEffect(() => {
     fetch("http://localhost:5000/car")
       .then((res) => res.json())
@@ -18,7 +18,7 @@ export const Product = () => {
       <div className="container product">
         <h2 className="title">PRODUCT</h2>
         <div className="card-container">
-          {products.map((car) => (
+          {car.map((car) => (
             <MediaCard key={car._id} product={car}></MediaCard>
           ))}
         </div>

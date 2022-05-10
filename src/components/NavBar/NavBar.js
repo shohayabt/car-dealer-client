@@ -34,6 +34,7 @@ export const NavBar = () => {
               <Link to="/blog">BLOG</Link>
             </li>
             <li>{!user ? <></> : <Link to="/addProduct">ADD PRODUCT</Link>}</li>
+            <li>{!user ? <></> : <Link to="/myitems">MY ITEMS</Link>}</li>
             <li>{!user ? <></> : <Link to="/management">MANAGEMENT</Link>}</li>
             <li>{user ? <></> : <Link to="/login">LOGIN</Link>}</li>
             <li>

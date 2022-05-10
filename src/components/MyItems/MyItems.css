@@ -1,5 +1,5 @@
 .table {
-  width: 700px;
+  width: 100%;
 }
 .table table {
   width: 100%;
@@ -10,7 +10,16 @@ td {
   border: 1px solid black;
   border-collapse: collapse;
 }
-.table table tr > th {
+.table table tr th {
   padding: 10px 14px;
   text-align: center;
+}
+.table table tr td {
+  padding: 10px 14px;
+  text-align: center;
+}
+@media only screen and (max-width: 760px) {
+  .container {
+    width: 100%;
+  }
 }

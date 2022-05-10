@@ -85,6 +85,9 @@
     right: 0;
     z-index: 9999;
   }
+  .signout {
+    margin-bottom: 12px;
+  }
   .show ul {
     text-align: center;
   }

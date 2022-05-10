@@ -1,14 +1,35 @@
 import React from "react";
 
-const TableData = () => {
+const TableData = (props) => {
+  const deleteData = props.delete;
+  const {
+    name,
+    imageUrl,
+    description,
+    price,
+    quantity,
+    suplierName,
+    _id,
+    email,
+  } = props.product;
+  console.log(props);
   return (
     <tr>
-      <td>NAME</td>
-      <td>SUPLIER NAME</td>
-      <td>PRICE</td>
-      <td>ID</td>
-      <td>EMAIL</td>
-      <td>ACTION</td>
+      <td>{name}</td>
+      <td>{suplierName}</td>
+      <td>{price}</td>
+      <td>{_id}</td>
+      <td>{email}</td>
+      <td>
+        <button
+          className="btn signout"
+          onClick={(id) => {
+            deleteData(_id);
+          }}
+        >
+          DELETE
+        </button>
+      </td>
     </tr>
   );
 };
