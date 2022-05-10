@@ -30,8 +30,9 @@ const Footer = () => {
                 </div>
                 <div className="post-text">
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sequi voluptas eum dignissimos.
+                    The Car Dealer Assists Customers Who Are Looking To Purchase
+                    A New Or Used Vehicle. They Converse With Customers To Find
+                    Out Their Budget And Wish List,
                   </p>
                   <h4>12/12/2021</h4>
                 </div>
@@ -43,8 +44,9 @@ const Footer = () => {
                 </div>
                 <div className="post-text">
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sequi voluptas eum dignissimos.
+                    The Car Dealer Assists Customers Who Are Looking To Purchase
+                    A New Or Used Vehicle. They Converse With Customers To Find
+                    Out Their Budget And Wish List,
                   </p>
                   <h4>12/12/2021</h4>
                 </div>
@@ -56,7 +58,7 @@ const Footer = () => {
             <div className="image-map">
               {product.map((image) => {
                 return (
-                  <div className="single-image">
+                  <div className="single-image" key={image._id}>
                     <img src={image.imageUrl} alt="" />
                   </div>
                 );

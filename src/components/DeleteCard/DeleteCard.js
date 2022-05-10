@@ -8,7 +8,6 @@ import Typography from "@mui/material/Typography";
 import "../ProductCard/Card.css";
 
 export const DeleteCard = (props) => {
-  console.log(props);
   const { name, imageUrl, description, price, quantity, suplierName, _id } =
     props.product;
   return (

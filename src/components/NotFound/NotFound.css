@@ -1,0 +1,8 @@
+.not-found {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+}
+.not-found > h1 {
+  color: orange;
+}

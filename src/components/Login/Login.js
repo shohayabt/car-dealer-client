@@ -6,6 +6,7 @@ import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
+import { Alert } from "@mui/material";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,6 +22,11 @@ const Login = () => {
     useSignInWithGoogle(auth);
   if (user || googleUser) {
     navigate(from, { replace: true });
+  }
+  if (error) {
+    <Alert variant="filled" severity="error">
+      <p>{error.message}</p>
+    </Alert>;
   }
   return (
     <section id="login">

@@ -5,14 +5,16 @@ import "./UpdateProduct.css";
 const UpdateProduct = () => {
   const [car, setCar] = useState({});
   const params = useParams();
-  const id = params.id;
+
   const navigate = useNavigate();
 
   const { name, imageUrl, description, price, quantity, suplierName, _id } =
     car;
 
+  const id = params.id;
+
   useEffect(() => {
-    fetch(`http://localhost:5000/car/${id}`)
+    fetch(`http://localhost:5000/products/${id}`)
       .then((res) => res.json())
       .then((data) => setCar(data));
   });

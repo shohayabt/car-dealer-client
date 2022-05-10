@@ -15,9 +15,13 @@ export const Management = () => {
   }, [products]);
 
   const deleteProduct = (id) => {
-    fetch(`http://localhost:5000/deleteCar/${id}`, {
-      method: "DELETE",
-    });
+    console.log(id);
+    const confirm = window.confirm("ARE YOU SURE?", id);
+    if (confirm) {
+      fetch(`http://localhost:5000/deleteCar/${id}`, {
+        method: "DELETE",
+      });
+    }
   };
   let navigate = useNavigate();
   return (

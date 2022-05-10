@@ -14,9 +14,13 @@ const MyItems = () => {
       .then((data) => setProducts(data));
   }, [products]);
   const deleteProduct = (id) => {
-    fetch(`http://localhost:5000/deleteCar/${id}`, {
-      method: "DELETE",
-    });
+    const confirm = window.confirm("ARE YOU SURE?");
+    console.log(confirm);
+    if (confirm) {
+      fetch(`http://localhost:5000/deleteCar/${id}`, {
+        method: "DELETE",
+      });
+    }
   };
   return (
     <section>

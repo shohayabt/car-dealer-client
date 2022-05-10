@@ -1,5 +1,9 @@
+.my-items {
+  padding: 90px 0px;
+}
 .table {
   width: 100%;
+  overflow-x: auto;
 }
 .table table {
   width: 100%;

@@ -12,7 +12,6 @@ const TableData = (props) => {
     _id,
     email,
   } = props.product;
-  console.log(props);
   return (
     <tr>
       <td>{name}</td>
