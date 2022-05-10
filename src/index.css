@@ -67,4 +67,7 @@ li {
   font-weight: 700;
   text-transform: uppercase;
 }
+.loading {
+  margin: 200px 0px 600px;
+}
 /* COMMON CLASSES END HERE  */

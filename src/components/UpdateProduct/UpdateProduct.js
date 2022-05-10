@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./UpdateProduct.css";
 
 const UpdateProduct = () => {
   const [car, setCar] = useState({});
   const params = useParams();
   const id = params.id;
+  const navigate = useNavigate();
 
   const { name, imageUrl, description, price, quantity, suplierName, _id } =
     car;
@@ -69,7 +70,16 @@ const UpdateProduct = () => {
   };
   return (
     <section className="updateProduct">
-      <div className="button-area d-flex-c"></div>
+      <div className="button-area d-flex-c">
+        <button
+          className="btn"
+          onClick={() => {
+            navigate("/management");
+          }}
+        >
+          Manage Inventories
+        </button>
+      </div>
       <div className="container">
         <div className="productInformation">
           <div className="image">

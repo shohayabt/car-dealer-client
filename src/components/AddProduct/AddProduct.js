@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import auth from "../../firebase";
 import "./AddProduct.css";
+import { CircularProgress, CircularProgressWithLabel } from "@mui/material";
 
 const AddProduct = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -16,7 +17,7 @@ const AddProduct = () => {
             navigate("/management");
           }}
         >
-          PRODUCT MANAGEMENT
+          Manage Inventories
         </button>
       </div>
       <div className="container">
