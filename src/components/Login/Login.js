@@ -6,7 +6,8 @@ import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import { Alert } from "@mui/material";
+import toast, { Toaster } from "react-hot-toast";
+import { CircularProgress } from "@mui/material";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,13 +24,22 @@ const Login = () => {
   if (user || googleUser) {
     navigate(from, { replace: true });
   }
+  const notify = (message) => toast(message);
   if (error) {
-    <Alert variant="filled" severity="error">
-      <p>{error.message}</p>
-    </Alert>;
+    notify(error.message);
+  }
+  if (loading || googleLoading) {
+    return (
+      <section>
+        <div className="container d-flex-c loading">
+          <CircularProgress value={100} />
+        </div>
+      </section>
+    );
   }
   return (
     <section id="login">
+      <Toaster />
       <div className="container">
         <div className="login-section">
           <form

@@ -8,6 +8,8 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useUpdateProfile } from "react-firebase-hooks/auth";
+import toast, { Toaster } from "react-hot-toast";
+import { CircularProgress } from "@mui/material";
 
 const Signup = () => {
   // UPDATING PROFILE
@@ -25,8 +27,23 @@ const Signup = () => {
     useCreateUserWithEmailAndPassword(auth);
   const [sendEmailVerification, sending, verificationError] =
     useSendEmailVerification(auth);
+
+  const notify = (message) => toast(message);
+  if (error) {
+    notify(error.message);
+  }
+  if (loading) {
+    return (
+      <section>
+        <div className="container d-flex-c loading">
+          <CircularProgress value={100} />;
+        </div>
+      </section>
+    );
+  }
   return (
     <section id="signup">
+      <Toaster />
       <div className="container">
         <div className="signup-section">
           <form
@@ -36,7 +53,7 @@ const Signup = () => {
               createUserWithEmailAndPassword(email, password);
               await updateProfile({ displayName });
               await sendEmailVerification();
-              console.log("VERIFICATION MAIL SENT");
+              notify("VERIFICATION MAIL SENT");
             }}
           >
             <div className="input-area">
@@ -55,7 +72,7 @@ const Signup = () => {
                 type="email"
                 name="email"
                 required
-                placeholder="Name"
+                placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -65,7 +82,7 @@ const Signup = () => {
                 type="password"
                 name="password"
                 required
-                placeholder="Name"
+                placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
@@ -75,7 +92,7 @@ const Signup = () => {
             <div className="button-area">
               <button
                 className="btn google-signup"
-                onClick={() => signInWithGoogle()}
+                onClick={async () => await signInWithGoogle()}
               >
                 Signup with goolge
               </button>
