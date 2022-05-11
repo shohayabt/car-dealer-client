@@ -14,7 +14,7 @@ const UpdateProduct = () => {
   const id = params.id;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://sleepy-bayou-43362.herokuapp.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => setCar(data));
   });
@@ -29,7 +29,7 @@ const UpdateProduct = () => {
     const updateQuantity = { updatedProductQuantity };
 
     //update data
-    const url = `http://localhost:5000/products/${id}`;
+    const url = `https://sleepy-bayou-43362.herokuapp.com/products/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -57,7 +57,7 @@ const UpdateProduct = () => {
     const updateQuantity = { updatedProductQuantity };
 
     //update data
-    const url = `http://localhost:5000/products/${id}`;
+    const url = `https://sleepy-bayou-43362.herokuapp.com/products/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

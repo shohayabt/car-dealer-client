@@ -8,7 +8,7 @@ export const Product = () => {
 
   const car = products.slice(0, 6);
   useEffect(() => {
-    fetch("http://localhost:5000/car")
+    fetch("https://sleepy-bayou-43362.herokuapp.com/car")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

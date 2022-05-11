@@ -41,7 +41,7 @@ const AddProduct = () => {
               imageUrl,
               description,
             };
-            const url = `http://localhost:5000/cars`;
+            const url = `https://sleepy-bayou-43362.herokuapp.com/cars`;
             fetch(url, {
               method: "POST",
               body: JSON.stringify(product),

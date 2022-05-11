@@ -13,7 +13,7 @@ import {
 const Footer = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/car")
+    fetch("https://sleepy-bayou-43362.herokuapp.com/car")
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);

@@ -9,7 +9,7 @@ const MyItems = () => {
   const email = user.email;
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/car/${email}`)
+    fetch(`https://sleepy-bayou-43362.herokuapp.com/car/${email}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [products]);
@@ -17,7 +17,7 @@ const MyItems = () => {
     const confirm = window.confirm("ARE YOU SURE?");
     console.log(confirm);
     if (confirm) {
-      fetch(`http://localhost:5000/deleteCar/${id}`, {
+      fetch(`https://sleepy-bayou-43362.herokuapp.com/deleteCar/${id}`, {
         method: "DELETE",
       });
     }

@@ -9,7 +9,7 @@ export const Management = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/car")
+    fetch("https://sleepy-bayou-43362.herokuapp.com/car")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [products]);
@@ -18,7 +18,7 @@ export const Management = () => {
     console.log(id);
     const confirm = window.confirm("ARE YOU SURE?", id);
     if (confirm) {
-      fetch(`http://localhost:5000/deleteCar/${id}`, {
+      fetch(`https://sleepy-bayou-43362.herokuapp.com/deleteCar/${id}`, {
         method: "DELETE",
       });
     }
