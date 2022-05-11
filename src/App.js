@@ -9,6 +9,7 @@ import MyItems from "./components/MyItems/MyItems";
 import { NavBar } from "./components/NavBar/NavBar";
 import { NotFound } from "./components/NotFound/NotFound";
 import PrivateAuth from "./components/PrivateAuth/PrivateAuth";
+import { ResetPassword } from "./components/ResetPassword/ResetPassword";
 import Signup from "./components/Signup/Signup";
 import UpdateProduct from "./components/UpdateProduct/UpdateProduct";
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="login" element={<Login />} />
+        <Route path="reset-password" element={<ResetPassword />} />
         <Route path="signup" element={<Signup />} />
         <Route path="/car/:id" element={<UpdateProduct />}></Route>
         <Route
