@@ -52,7 +52,7 @@ const Signup = () => {
               event.preventDefault();
               createUserWithEmailAndPassword(email, password);
               await updateProfile({ displayName });
-              await sendEmailVerification();
+              await sendEmailVerification(email);
               notify("VERIFICATION MAIL SENT");
             }}
           >
