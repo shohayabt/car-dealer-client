@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { MediaCard } from "../ProductCard/Card";
 import "./Product.css";
 
@@ -21,6 +22,11 @@ export const Product = () => {
           {car.map((car) => (
             <MediaCard key={car._id} product={car}></MediaCard>
           ))}
+        </div>
+        <div className="button-area  d-flex-c">
+          <button className="btn">
+            <Link to="management">MANAGE INVENTORY</Link>
+          </button>
         </div>
       </div>
     </>

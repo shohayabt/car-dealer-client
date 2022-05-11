@@ -1,11 +1,11 @@
 .product {
   padding-top: 30px;
+  padding-bottom: 30px;
 }
 .card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* padding: 30px; */
-  padding-bottom: 60px;
   grid-column-gap: 5px;
   grid-row-gap: 30px;
 }

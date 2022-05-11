@@ -23,7 +23,14 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="reset-password" element={<ResetPassword />} />
         <Route path="signup" element={<Signup />} />
-        <Route path="/car/:id" element={<UpdateProduct />}></Route>
+        <Route
+          path="/car/:id"
+          element={
+            <PrivateAuth>
+              <UpdateProduct />
+            </PrivateAuth>
+          }
+        ></Route>
         <Route
           path="addProduct"
           element={
